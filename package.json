@@ -1,0 +1,70 @@
+{
+  "name": "@jamesacarr/jest-reporter-github-actions",
+  "version": "0.0.1",
+  "description": "Reporter for Jest that outputs GitHub Actions annotations",
+  "author": "James Carr <james@jamescarr.dev>",
+  "homepage": "https://github.com/jamesacarr/jest-reporter-github-actions#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesacarr/jest-reporter-github-actions.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jamesacarr/jest-reporter-github-actions/issues"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "keywords": [
+    "jest",
+    "jest-reporter"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "lint": "xo --fix",
+    "lint:ci": "xo",
+    "prepublish": "yarn build",
+    "typecheck": "tsc --noEmit"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts}": [
+      "yarn lint"
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "printWidth": 120,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "env": [
+      "es6",
+      "jest",
+      "node"
+    ],
+    "rules": {
+      "@typescript-eslint/prefer-readonly-parameter-types": 0
+    }
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.3"
+  },
+  "devDependencies": {
+    "@jest/reporters": "^25.4.0",
+    "@jest/test-result": "^25.4.0",
+    "@types/node": "^13.13.1",
+    "typescript": "^3.8.3",
+    "xo": "^0.29.1"
+  }
+}
