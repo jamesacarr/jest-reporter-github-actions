@@ -222,6 +222,13 @@
   resolved "https://registry.yarnpkg.com/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
+"@jamesacarr/eslint-formatter-github-actions@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@jamesacarr/eslint-formatter-github-actions/-/eslint-formatter-github-actions-0.0.1.tgz#5dd5ab5784b81cb2ee7f4926a0f67ea604ba013b"
+  integrity sha512-Ip700UJ/aN93D3Tn0Qm2h5wBdnZIyC778rkPGEWoJBy4XL+EMiE5juv3P1PlVYcF2b4cnSGvwD6DeDuDZf5+yA==
+  dependencies:
+    "@actions/core" "^1.2.3"
+
 "@jest/console@^25.4.0":
   version "25.4.0"
   resolved "https://registry.yarnpkg.com/@jest/console/-/console-25.4.0.tgz#e2760b532701137801ba824dcff6bc822c961bac"

@@ -25,7 +25,7 @@
     "build": "tsc",
     "build:watch": "tsc --watch",
     "lint": "xo --fix",
-    "lint:ci": "xo",
+    "lint:ci": "xo --reporter @jamesacarr/github-actions",
     "prepublish": "yarn build",
     "typecheck": "tsc --noEmit"
   },
@@ -61,6 +61,7 @@
     "@actions/core": "^1.2.3"
   },
   "devDependencies": {
+    "@jamesacarr/eslint-formatter-github-actions": "^0.0.1",
     "@jest/reporters": "^25.4.0",
     "@jest/test-result": "^25.4.0",
     "@types/node": "^13.13.1",
