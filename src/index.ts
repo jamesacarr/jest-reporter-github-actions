@@ -1,18 +1,18 @@
-import { issueCommand, issue } from '@actions/core/lib/command';
+import { startGroup, endGroup } from '@actions/core';
+import { issueCommand } from '@actions/core/lib/command';
 import { AggregatedResult, BaseReporter, Context, TestResult } from '@jest/reporters';
 import { AssertionResult } from '@jest/test-result';
 
 class GitHubActionsReporter extends BaseReporter {
   public onRunComplete(_contexts: Set<Context>, results: AggregatedResult) {
-    issue('group', 'Jest Annotations');
+    startGroup('Jest Annotations');
 
     const failedTests = this.testsWithFailures(results);
-    for (const test of failedTests) {
-      const { properties, message } = test;
+    for (const { properties, message } of failedTests) {
       issueCommand('error', properties, message);
     }
 
-    issue('endgroup');
+    endGroup();
   }
 
   private testsWithFailures(results: AggregatedResult) {
