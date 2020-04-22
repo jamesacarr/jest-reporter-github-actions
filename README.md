@@ -1,6 +1,7 @@
 # Jest Reporter for GitHub Actions
 
 [![Test status](https://github.com/jamesacarr/jest-reporter-github-actions/workflows/tests/badge.svg)](https://github.com/jamesacarr/jest-reporter-github-actions/actions?query=workflow%3Atests)
+[![NPM badge](https://img.shields.io/npm/v/@jamesacarr/jest-reporter-github-actions.svg)](https://www.npmjs.com/package/@jamesacarr/jest-reporter-github-actions)
 
 A custom reporter for Jest that creates annotations when run via GitHub Actions
 
