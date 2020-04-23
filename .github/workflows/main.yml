@@ -1,55 +1,35 @@
 name: tests
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on: 
+on:
   push:
     branches:
       - master
     pull_request:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   tests:
     runs-on: ubuntu-latest
-
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      # Setup the correct node version
-      - name: Set Node version
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 12.x
 
-      # Yarn's cache directory depends on your operating system & version of yarn
       - name: Get cache directory
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
-      # Cache node_modules
-      - name: Load cache
-        uses: actions/cache@v1
-        env:
-          cache-name: cache-node-modules
+      - uses: actions/cache@v1
+        id: yarn-cache
         with:
           path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/yarn.json') }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+            ${{ runner.os }}-yarn-
 
-      # Install the dependencies
-      - name: Install dependencies
-        run: yarn install
+      - run: yarn install
 
-      # Linting
-      - name: Lint files
-        run: yarn lint:ci
+      - run: yarn lint:ci
 
-      # Typecheck
-      - name: Typecheck files
-        run: yarn typecheck
+      - run: yarn typecheck
