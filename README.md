@@ -11,7 +11,7 @@ A custom reporter for Jest that creates annotations when run via GitHub Actions
 npm install -D @jamesacarr/jest-reporter-github-actions
 ```
 
-Or, event better:
+Or, even better:
 
 ```sh
 yarn add -D @jamesacarr/jest-reporter-github-actions
