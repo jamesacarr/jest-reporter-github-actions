@@ -34,5 +34,5 @@ module.exports = {
 Or, you can simply run Jest with the following options:
 
 ```sh
-jest --testLocationInResults --reporters=default --reporter=@jamesacarr/jest-reporter-github-actions
+jest --testLocationInResults --reporters=default --reporters=@jamesacarr/jest-reporter-github-actions
 ```
