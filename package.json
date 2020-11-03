@@ -26,7 +26,7 @@
     "build:watch": "tsc --watch",
     "lint": "xo --fix",
     "lint:ci": "xo --reporter @jamesacarr/github-actions",
-    "prepublish": "yarn build",
+    "prepublishOnly": "yarn build",
     "typecheck": "tsc --noEmit"
   },
   "husky": {
@@ -58,14 +58,14 @@
     }
   },
   "dependencies": {
-    "@actions/core": "^1.2.3"
+    "@actions/core": "^1.2.3",
+    "@jest/reporters": "^26.6.2"
   },
   "devDependencies": {
     "@jamesacarr/eslint-formatter-github-actions": "^0.0.1",
-    "@jest/reporters": "^25.4.0",
-    "@jest/test-result": "^25.4.0",
-    "@types/node": "^13.13.1",
-    "typescript": "^3.8.3",
-    "xo": "^0.29.1"
+    "@jest/test-result": "^26.6.2",
+    "@types/node": "^14.14.6",
+    "typescript": "^4.0.5",
+    "xo": "^0.34.2"
   }
 }
