@@ -54,7 +54,8 @@
       "node"
     ],
     "rules": {
-      "@typescript-eslint/prefer-readonly-parameter-types": 0
+      "@typescript-eslint/prefer-readonly-parameter-types": 0,
+      "unicorn/no-fn-reference-in-iterator": 0
     }
   },
   "dependencies": {

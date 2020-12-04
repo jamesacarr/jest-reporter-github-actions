@@ -3,6 +3,8 @@ import { issueCommand } from '@actions/core/lib/command';
 import { AggregatedResult, BaseReporter, Context, TestResult } from '@jest/reporters';
 import { AssertionResult } from '@jest/test-result';
 
+import flatMap from './flat-map';
+
 class GitHubActionsReporter extends BaseReporter {
   public onRunComplete(_contexts: Set<Context>, results: AggregatedResult) {
     startGroup('Jest Annotations');
@@ -18,7 +20,7 @@ class GitHubActionsReporter extends BaseReporter {
   private testsWithFailures(results: AggregatedResult) {
     const failedSuites: TestResult[] = results.testResults.filter((testResult) => testResult.numFailingTests > 0);
 
-    return failedSuites.flatMap((suite) =>
+    return flatMap(failedSuites, (suite) =>
       suite.testResults
         .filter((result) => result.status === 'failed')
         .map((result) => ({
