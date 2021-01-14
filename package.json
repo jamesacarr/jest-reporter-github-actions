@@ -1,6 +1,6 @@
 {
   "name": "@jamesacarr/jest-reporter-github-actions",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Reporter for Jest that outputs GitHub Actions annotations",
   "author": "James Carr <james@jamescarr.dev>",
   "homepage": "https://github.com/jamesacarr/jest-reporter-github-actions#readme",
